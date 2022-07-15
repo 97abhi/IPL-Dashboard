@@ -1,11 +1,20 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom'
 import './App.css';
+import { MatchPage } from './Pages/MatchPage';
 import { TeamPage } from './Pages/TeamPage';
 
 function App() {
   return (
     <div className="App">
-      <TeamPage/>
+      {/* Switch is replaced fto routes in react-router-domV6*/}
+      <Router>
+          <Routes>
+            <Route path='/teams/:teamName/matches/:year' element={<MatchPage/>} /> 
+            <Route path="/teams/:teamName" element={<TeamPage/>}/>       
+          </Routes>
+        
+      </Router>
+
     </div>
   );
 }
