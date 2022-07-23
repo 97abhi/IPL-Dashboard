@@ -1,3 +1,17 @@
 1. The main function class should be in the main directory. It shhould not be on the same level of hirearchy as other classes files.
 2. The files that we dont need git to add it in repo online we can add that directory in .gitignore such as node_modules of react app.
-
+.env file
+whatever properties we add in .env file is accessible to entire app through process.env.(name of the field) similar to application.properties in Spring Boot
+3. we can build the react app first by npm build and then build the spring boot app as its the container in which the react app will
+   be present. And we build the spring boot app by running ./mvnm install
+4. After doing the npm build and ./mvnw install we need to copy all the files of the react app which is present in build directory 
+   and place it in main/resource/public directory since whatever html file you place there will be called first and from then on
+   react can start and interact with spring boot and so on.
+   
+   
+ ERROR  
+ has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+ 
+ The following error comes when the JDK installed in the environment variable path is mismatching with pom.xml java version
+ 
+ 
